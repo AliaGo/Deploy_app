@@ -12,12 +12,12 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
-    "@babel/core": "^7.19.6",
-    "@babel/node": "^7.20.0",
-    "@babel/preset-env": "^7.19.4"
+    "@babel/core": "^7.20.2",
+    "@babel/node": "^7.20.2",
+    "@babel/preset-env": "^7.20.2"
   },
   "scripts": {
-    "server": "nodemon src/server.js --ext js --exec babel-node",
-    "deploy": "NODE_ENV=production babel-node server.js"
+    "server": "nodemon src/server.js --ext js --watch src --exec babel-node",
+    "deploy": "NODE_ENV=production babel-node src/server.js"
   }
 }
