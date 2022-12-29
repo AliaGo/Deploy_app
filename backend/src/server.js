@@ -8,11 +8,15 @@ import ScoreCard from './models/ScoreCard';
 
 db.connect();
 
+
 const app = express();
+
+app.use(cors());
+/*
 if(process.env.NODE_ENV === "development"){
     app.use(cors());
 }
-
+*/
 //app.use(cors());
 //app.use(express.json());
 app.use(bodyParser.json());
@@ -26,7 +30,7 @@ if(process.env.NODE_ENV === "production"){
         res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
     });
 }
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 app.get('/', (req, res) => {
 
  res.send('Hello, World!');
