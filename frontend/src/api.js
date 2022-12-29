@@ -3,7 +3,7 @@ import axios from 'axios';
 const API_ROOT = 
   process.env.NODE_ENV === "production"
     ? "/api"
-    : "http://localhost:4001/";
+    : "http://localhost:4001/api";
 /*
 const WS_URL =
   process.env.NODE_ENV === "production"
