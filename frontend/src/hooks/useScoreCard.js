@@ -7,6 +7,7 @@ const ERROR_MESSAGE_COLOR = '#fb3640';
 const ScoreCardContext = createContext({
   messages: [],
 
+  resetMessages: () => {}, //handleClear
   addCardMessage: () => {},
   addRegularMessage: () => {},
   addErrorMessage: () => {},
@@ -18,6 +19,11 @@ const makeMessage = (message, color) => {
 
 const ScoreCardProvider = (props) => {
   const [messages, setMessages] = useState([]);
+
+  const resetMessages = () => { //handleClear
+    setMessages([{message: 'Database cleared', color: '#2b2e4a'}]);
+    // console.log(messages);
+  };
 
   const addCardMessage = (message) => {
     setMessages([...messages, makeMessage(message, ADD_MESSAGE_COLOR)]);
@@ -38,6 +44,7 @@ const ScoreCardProvider = (props) => {
     <ScoreCardContext.Provider
       value={{
         messages,
+        resetMessages,
         addCardMessage,
         addRegularMessage,
         addErrorMessage,
@@ -50,5 +57,6 @@ const ScoreCardProvider = (props) => {
 function useScoreCard() {
   return useContext(ScoreCardContext);
 }
+
 
 export { ScoreCardProvider, useScoreCard };
