@@ -10,7 +10,5 @@
     "install:prod": "cd frontend && yarn install --freeze-lockfile && cd ../backend && yarn install --freeze-lockfile",
     "build": "cd frontend && yarn build",
     "deploy": "cd backend && yarn deploy"
-  },
-  "packageManager": "yarn@1.22.19"
-
+  }
 }
