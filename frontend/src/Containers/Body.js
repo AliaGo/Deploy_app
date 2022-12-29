@@ -10,7 +10,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 
 import { useStyles } from '../hooks';
-import {api} from '../api';
+import axios from '../api';
 import { useScoreCard } from '../hooks/useScoreCard';
 
 const Wrapper = styled.section`
@@ -56,7 +56,7 @@ const Body = () => {
   const handleAdd = async () => {
     const {
       data: { message, card },
-    } = await api.post('/card', {
+    } = await axios.post('/card', {
         name,
         subject,
         score,
@@ -78,7 +78,7 @@ const Body = () => {
   const handleQuery = async () => {
     const {
       data: { messages, message },
-    } = await api.get('/cards', {
+    } = await axios.get('/cards', {
       params: {
         queryType,
         queryString,

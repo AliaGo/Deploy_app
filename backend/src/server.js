@@ -30,7 +30,7 @@ if(process.env.NODE_ENV === "production"){
         res.sendFile(path.join(__dirname, "../frontend", "build", "index.html"));
     });
 }
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 4001;
 app.get('/', (req, res) => {
 
  res.send('Hello, World!');
